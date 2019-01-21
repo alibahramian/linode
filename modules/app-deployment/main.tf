@@ -14,12 +14,10 @@ data "linode_instance_type" "default" {
   id = "${var.instance_type}"
 }
 
-#resource "linode_sshkey" "main_key" {
-#  label   = "public-key"
-#  ssh_key = "${chomp(file("~/.ssh/id_rsa.pub"))}"
-#}
-
-authorized_keys = "${var.authorized_keys}"
+resource "linode_sshkey" "main_key" {
+  label   = "public-key"
+  ssh_key = "${chomp(file("~/.ssh/id_rsa.pub"))}"
+}
 
 resource "linode_instance" "staging-env" {
   label      = "${var.linode_label}"
