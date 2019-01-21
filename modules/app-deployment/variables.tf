@@ -38,11 +38,10 @@ variable "config_label" {
   default     = "CentOS 7"
 }
 
-
 variable "authorized_keys" {
-    description = "The Public id_rsa.pub key used for secure SSH connections"
-    default = ["default-ssh-public-key"]
-
+  description = "The Public id_rsa.pub key used for secure SSH connections"
+  default     = ["default-ssh-public-key"]
+}
 
 variable "root_password" {
   description = "Password of the Root User"

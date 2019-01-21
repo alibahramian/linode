@@ -17,7 +17,7 @@ data "linode_instance_type" "default" {
 #resource "linode_sshkey" "main_key" {
 #  label   = "public-key"
 #  ssh_key = "${chomp(file("~/.ssh/id_rsa.pub"))}"
-}
+#}
 
 authorized_keys = "${var.authorized_keys}"
 
